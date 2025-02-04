@@ -54,3 +54,71 @@ In TensorBoard, you will see:
 Accuracy and loss trends for both training and validation.
 Histograms of weights and biases (if enabled).
 Graph of the model architecture.
+
+# problem 4.1 Q/A
+What patterns do you observe in the training and validation accuracy curves?
+Early Training
+
+Both accuracies increase fast Shows initial learning
+
+Peak Performance
+
+Improvement slows down Indicates learning plateau
+
+Warning Signs
+
+Training: 99% Validation: 89% Big gap = overfitting
+
+Unstable Signs
+
+Jumping validation accuracy suggests: ↑ Learning rate too high or ↓ Dataset too small
+
+////////////////////////////////////////////////////////////////////////////////
+
+How can you use TensorBoard to detect overfitting?
+Here's a simpler breakdown of detecting overfitting using TensorBoard:
+
+Monitor Accuracy
+
+Use TensorBoard's Scalars tab
+Warning sign: Training accuracy rises while validation stays flat Example: Training 99% vs Validation 85%
+Fix: Add dropout layers or stop training earlier
+Check Loss Values
+
+Both losses should decrease together
+Red flag: Training loss drops while validation loss grows Example: Training 0.01 vs Validation climbing (0.3 → 0.4 → 0.5)
+Fix: Simplify model or add regularization
+Watch Weight Patterns
+
+Use Histograms tab
+Problem: Extreme or concentrated weights
+Fix: Add L2 regularization to control weight size
+Key Steps:
+
+Launch TensorBoard (tensorboard --logdir=logs/fit)
+Compare training vs validation metrics
+Adjust model based on patterns seen
+///////////////////////////////////////////////////////////////////////////
+
+3.What happens when you increase the number of epochs? Here's a simpler explanation of the three main phases in model training:
+
+Learning Phase (Early)
+Both accuracies improve
+Loss decreases
+Example: Training 70% → 85%
+Good sign: Model is learning properly
+Plateau Phase (Middle)
+Improvements slow down
+Little change in metrics
+Example: Training ~95%, Val ~90%
+Normal: Model has learned most patterns
+Overfitting Phase (Late)
+Training accuracy keeps rising
+Validation accuracy drops
+Training loss decreases while validation loss grows
+Problem: Model is memorizing, not learning
+Think of it like studying for a test:
+
+First you learn quickly
+Then progress slows as you master basics
+Studying too long might make you memorize exact questions instead of understanding concepts

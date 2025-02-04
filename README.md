@@ -1,7 +1,7 @@
 # Name : kalyan Guntuka
 # 700# : 700757036
 
-# Tensorflow-assignment
+# Problem -1 
 
 Step 1: Create a random tensor of shape (4, 6)
 Step 2: Find its rank and shape

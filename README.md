@@ -13,3 +13,44 @@ Step 5: Explanation of broadcasting
 - Allows tensors of different shapes to be used in element-wise operations.
 - The smaller tensor (4,1) expands its second dimension to match (4,6).
 - This process avoids unnecessary memory duplication.
+
+
+# problem -2
+Explanation:
+Mean Squared Error (MSE):
+
+Used for regression tasks.
+Penalizes larger errors more heavily.
+
+Categorical Cross-Entropy (CCE):
+
+Used for classification tasks.
+Measures how well predicted probabilities match actual labels.
+Lower values mean better predictions.
+
+Observations:
+
+When predictions become less confident, MSE and CCE increase.
+CCE is more sensitive to incorrect class probabilities than MSE.
+
+
+# problem -3
+
+Adam (Adaptive Moment Estimation):
+
+Uses momentum to speed up learning.
+Fast convergence but can sometimes overfit.
+
+SGD (Stochastic Gradient Descent):
+
+Slower but can generalize well.
+More stable and avoids sharp oscillations.
+
+
+# problem -4
+
+The model trains for 5 epochs and logs data to "logs/fit/".
+In TensorBoard, you will see:
+Accuracy and loss trends for both training and validation.
+Histograms of weights and biases (if enabled).
+Graph of the model architecture.
